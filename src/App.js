@@ -1,9 +1,11 @@
 
 import './App.css';
-
+import start from './images/start.png'
+import stop from './images/stop.png'
+import reset from './images/reset.png'
 function App() { 
   let [seconds,minutes,hours]=[0,0,0]
-  let display=document.getElementById("display");
+  
   let timer=null;
   const watch=()=>{ 
    
@@ -19,8 +21,8 @@ function App() {
           let hou=hours<10? "0"+hours:hours;
           let minu=minutes<10 ? "0"+minutes:minutes;
           let sec=seconds<10? "0"+seconds:seconds;
-         display.innerHTML=hou+":"+ minu+":"+sec;
-         console.log("jfom")
+          document.getElementById("display").innerHTML=hou+":"+ minu+":"+sec;
+        
   } 
 
 
@@ -29,12 +31,12 @@ function App() {
     if(timer!==null)
      {clearInterval(timer)}
     timer= setInterval(watch,1000);
-   
+
 
   }
   const stopwatch=()=>{
     
-    clearInterval(timer)
+   clearInterval(timer)
   
 
 
@@ -45,7 +47,7 @@ function App() {
      seconds=0
      minutes=0
      hours=0
-    display.innerHTML="00:00:00";
+     document.getElementById("display").innerHTML="00:00:00";
 
 
  }
@@ -81,9 +83,9 @@ function App() {
        <div className='stopwatch'> 
        <h1 id="display" style={{color:"white"}}>00:00:00</h1>
        <div className='buttons' >
-       <img src="stop.png" onClick={stopwatch} alt="noimage"/>
-       <img src="start.png" onClick={startwatch} alt="noimage" />
-       <img src="reset.png" onClick={resetwatch} alt="noimage"/>
+       <img src={stop} onClick={stopwatch} alt="noimage"/>
+       <img src={start} onClick={startwatch} alt="noimage" />
+       <img src={reset} onClick={resetwatch} alt="noimage"/>
       
       </div> 
        </div> 
