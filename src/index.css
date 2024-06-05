@@ -1,109 +1,101 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  min-height: 100vh;
- background: black;
+
+  background: black;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
- 
-section{ 
+
+section {
   position: absolute;
   display: flex;
- 
- width: 100%;
- 
+
   gap: 2px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   overflow: hidden;
-} 
-section span { 
-  position:relative;
-  display: block;
+}
+section span {
+  position: relative;
+
   z-index: 2;
- width: calc(6.25vw - 2px);
- height: calc(6.25vw - 2px);
+  width: calc(5.2vw - 2px);
+  height: calc(5.2vw - 2px);
   background: #181818;
- transition: 1.5s;
+  transition: 1.5s;
   border-radius: 5%;
-} 
-section span:hover { 
-  background:#0f0;
+}
+section span:hover {
+  background: #0f0;
   transition: 0s;
 }
 
-section::before{
-  content: '';
-  position:absolute;
+section::before {
+  content: "";
+  position: absolute;
   z-index: 1;
-   width: 100%;
-   height: 100%;
-  background: linear-gradient(#000,#0f0,#000);
- animation: animate 5s linear infinite ; 
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000, #0f0, #000);
+  animation: animate 5s linear infinite;
 }
 
-@keyframes animate
-{ 0%{
-  transform: translateY(-100%);
- 
- 
- 
-}
-100%{
-  transform: translateY(100%);
-  
-}
+@keyframes animate {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }
 
-
-
-
-.stopwatch1{
+.stopwatch1 {
   display: flex;
- 
-   border-radius: 3%;
+
+  border-radius: 3%;
   justify-content: center;
   align-items: center;
-   position: absolute;
-    z-index: 3;
-   background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.5)),url(background.png);
-   background-position: center;
-   background-size: cover;
-     width: 45%;
-     margin-left:28% ;
-     margin-top:15% ;
-    box-shadow: 0 10px 10px black;
-   
- } 
- h1{
+  position: absolute;
+  z-index: 3;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url(background.png);
+  background-position: center;
+  background-size: cover;
+  width: 45%;
+  margin-left: 28%;
+  margin-top: 15%;
+  box-shadow: 0 10px 10px black;
+}
+h1 {
   font-size: 70px;
   font-weight: 300;
- }
- .buttons{
+}
+.buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-
- }
- .buttons img{
+}
+.buttons img {
   width: 64px;
-  margin:  20px;
+  margin: 20px;
   height: 64px;
   cursor: pointer;
- }
- .buttons img:nth-child(2){
+}
+.buttons img:nth-child(2) {
   width: 85px;
-  
+
   height: 85px;
-  
- }
-  
- 
+}
+
+@media (max-width: 500px) {
+  .stopwatch1 {
+    margin-top: -15%;
+  }
+}
